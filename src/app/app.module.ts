@@ -6,7 +6,10 @@ import { AppComponent } from './app.component';
 import { CommanderComponent } from './commander/commander.component';
 import { ShowCommandComponent } from './commander/show-command/show-command.component';
 import { AddEditCommandComponent } from './commander/add-edit-command/add-edit-command.component';
-import { CommanderserviceService } from './commanderservice.service';
+import { CommanderService } from './commander.service';
+
+import {HttpClientModule} from '@angular/common/http';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,9 +20,12 @@ import { CommanderserviceService } from './commanderservice.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [CommanderserviceService],
+  providers: [CommanderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

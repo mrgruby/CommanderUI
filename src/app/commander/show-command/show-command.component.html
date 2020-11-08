@@ -1,1 +1,23 @@
-<p>show-command works!</p>
+<table class="table table-striped">
+<thead>
+    <tr>
+        <th>How-to</th>
+        <th>Line</th>
+        <th>Options</th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let dataItem of CommandsList">
+        <td>{{dataItem.howTo}}</td>
+        <td>{{dataItem.line}}</td>
+        <td>
+            <button type="button" class="btn btn-light mr-1">
+                Edit
+            </button>
+            <button type="button" class="btn btn-light mr-1">
+                Delete
+            </button>
+        </td>
+    </tr>
+</tbody>
+</table>

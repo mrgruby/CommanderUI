@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { CommanderserviceService } from './commanderservice.service';
+import { CommanderService } from './commander.service';
 
 describe('CommanderserviceService', () => {
-  let service: CommanderserviceService;
+  let service: CommanderService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(CommanderserviceService);
+    service = TestBed.inject(CommanderService);
   });
 
   it('should be created', () => {
