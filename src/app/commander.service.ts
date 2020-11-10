@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -7,6 +7,11 @@ import { Observable } from 'rxjs';
 })
 export class CommanderService {
   readonly APIUrl = "https://localhost:44339/api";
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json; charset=utf-8'
+    })
+  };
 
   constructor(private http:HttpClient) { }
 
@@ -25,9 +30,10 @@ export class CommanderService {
     return this.http.post(this.APIUrl+'/commands', val)
   }
 
-  //Update command
-  updateCommand(val:any){
-    return this.http.patch(this.APIUrl+'/commands', val)
+  //Update command return this.http.put<BlogPost>(this.myAppUrl + this.myApiUrl + postId, JSON.stringify(blogPost), this.httpOptions)
+  updateCommand(id:string, val:any){
+    //return this.http.put(this.myAppUrl + this.myApiUrl + postId, JSON.stringify(blogPost)
+    return this.http.put(this.APIUrl+'/commands/'+id, val)
   }
 
   //Delete command
